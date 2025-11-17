@@ -13,7 +13,7 @@ function RouteError() {
   const error = useRouteError();
   return (
     <div>
-      <h1>Error: {error.status || 'Unknown'}</h1>
+      <h1>Error: {error.status || 'Random err'}</h1>
       <p>{error.statusText || error.message || 'Page not found'}</p>
     </div>
   );
