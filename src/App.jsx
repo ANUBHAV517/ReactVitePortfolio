@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+
+import './App.css';
+import TICTACTOE from './component/tic-tac-toe';
+import Timer from './component/timer';
+import { Outlet, Route, Routes } from 'react-router-dom';
+import Services from './pages/Services';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Sidebar from './component/Sidebar';
+import useIsMobile from './hook/useIsMobile';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateSideBar } from './slice/SidebarSlice';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const dispatch = useDispatch();
+  const isMobile = useIsMobile();
+  const sidebarOpen = useSelector((state) => state.sidebar.sidebarOpen);
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      {/* <Outlet /> */}
+      <div className="layout">
+        <Sidebar /> {/* Common sidebar */}
+        <main>
+          <Outlet /> {/* Render the matched route component */}
+          {isMobile && sidebarOpen && (
+            <div
+              className="overlay"
+              onClick={() => dispatch(updateSideBar())}
+            ></div>
+          )}
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {/* <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
