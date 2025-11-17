@@ -18,14 +18,8 @@ function RouteError() {
     </div>
   );
 }
-const base = import.meta.env.VITE_BASE_URL;
-console.log(
-  base,
-  'base',
-  import.meta.env.VITE_BASE_URL,
-  'process.env.NODE_ENV',
-  process.env.NODE_ENV
-);
+const base = import.meta.env.VITE_BASE_URL || '/';
+
 const router = createBrowserRouter(
   [
     {
