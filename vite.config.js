@@ -1,19 +1,13 @@
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
-// export default defineConfig({
-//   // base: '/ReactVitePortfolio/',
-//   base: process.env.VITE_BASE_URL,
-//   plugins: [react()],
-// });
-
+const base = import.meta.env.VITE_BASE_URL;
 export default defineConfig(({ mode }) => {
   // Load env variables based on the mode (development or production)
   const env = loadEnv(mode, process.cwd(), '');
-
+  console.log(env, 'live', base);
   return {
-    base: env.BASE_URL || '/',
+    base: base || '/',
     plugins: [react()],
   };
 });
