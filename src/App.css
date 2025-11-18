@@ -736,10 +736,15 @@ h3.my-profession {
 }
 
 .contact .contact-info-item {
-  flex: 0 0 25%;
-  max-width: 25%;
+  flex: 0 0 55%;
+  max-width: 50%;
   text-align: center;
   margin-bottom: 60px;
+  word-break: break-word;
+  /* Allows breaking at soft wrap points */
+  overflow-wrap: break-word;
+  /* Ensures long words wrap */
+  white-space: normal;
 }
 
 .contact .contact-info-item .icon {
