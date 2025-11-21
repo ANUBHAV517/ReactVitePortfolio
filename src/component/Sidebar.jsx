@@ -145,7 +145,7 @@ function Sidebar() {
               Projects
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               className="menu"
               to={'/miniProjects'}
@@ -154,7 +154,7 @@ function Sidebar() {
               <FontAwesomeIcon icon={faBriefcase} />
               Mini Projects
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
               className="menu"

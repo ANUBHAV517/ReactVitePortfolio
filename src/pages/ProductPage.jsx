@@ -217,7 +217,7 @@ function ProductPage() {
                 <h3 className="product-name">{product.title}</h3>
                 <div className="card-footer">
                   <span className="price">${product.price}</span>
-                  <button className="add-button">
+                  <button className="second-btn">
                     <FontAwesomeIcon icon={faShoppingCart} />
                     Add
                   </button>
@@ -229,18 +229,18 @@ function ProductPage() {
 
         {/* Load More / End Message */}
         {hasMore ? (
-          <div className="load-more-container">
-            <button onClick={loadMore} className="load-more-button">
+          <div className="  flex-center ">
+            <button onClick={loadMore} className=" btn">
               Load More Products ({data.products.length - displayCount}{' '}
               remaining)
             </button>
           </div>
         ) : (
-          <div className="load-more-container">
+          <div className="flex-center">
             <p className="all-viewed-text">You've viewed all products!</p>
           </div>
         )}
-        <div className="dummy-box"></div>
+        {/* <div className="dummy-box"></div> */}
       </div>
     </div>
   );

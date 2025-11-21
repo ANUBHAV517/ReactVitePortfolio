@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './index.css';
 import './App.css';
+import './styles/main.scss';
 import TICTACTOE from './component/tic-tac-toe';
 import Timer from './component/timer';
 import { Outlet, Route, Routes } from 'react-router-dom';

@@ -142,7 +142,7 @@ ul {
 
 }
 
-.btn {
+/* .btn {
   font-size: 16px;
   font-weight: 500;
   padding: 12px 35px;
@@ -153,11 +153,11 @@ ul {
   background: var(--skin-color);
   transition: all 0.3s ease;
   cursor: pointer;
-}
+} */
 
-.btn:hover {
+/* .btn:hover {
   transform: scale(1.05);
-}
+} */
 
 .shadow-dark {
   box-shadow: 0 0 20px rgba(48, 46 77, 0.15);
@@ -810,10 +810,11 @@ h3.my-profession {
   height: 140px;
 }
 
+/* 
 .contact .contact-form .btn {
   height: 50px;
   padding: 0 50px;
-}
+} */
 
 /* Tic Tac Toe CSS - Fully Responsive */
 
@@ -1228,7 +1229,7 @@ h3.my-profession {
 .dummy-box {
   height: 100px;
   width: 100px;
-  border: 5px solid black;
+  /* border: 5px solid black; */
   padding: 5px;
   margin: 5px;
   box-sizing: border-box;

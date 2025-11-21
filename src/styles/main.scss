@@ -1,0 +1,16 @@
+@use '../styles/mixins' as mix;
+@use '../styles/variables' as var;
+
+.btn {
+  @include mix.btn-primary;
+}
+
+.flex-center {
+  @include mix.flex-mid;
+}
+.dummy-box {
+  border: 1px solid var.$primary-color;
+}
+.second-btn {
+  @include mix.btn-secondary;
+}
