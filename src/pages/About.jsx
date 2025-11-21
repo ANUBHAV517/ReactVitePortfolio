@@ -2,10 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import useIsMobile from '../hook/useIsMobile';
 import { Link } from 'react-router-dom';
+import WithSidebar from '../component/WithSidebar';
 
-function About() {
-  const sidebarOpen = useSelector((state) => state.sidebar.sidebarOpen);
-  const isMobile = useIsMobile();
+function About({ sidebarOpen, isMobile }) {
+  // const sidebarOpen = useSelector((state) => state.sidebar.sidebarOpen);
+  // const isMobile = useIsMobile();
   return (
     <>
       <section
@@ -201,7 +202,7 @@ function About() {
                         <div className="skill-percent">60%</div>
                       </div>
                     </div>
-                    <div className="skill-item padd-15">
+                    {/* <div className="skill-item padd-15">
                       <h5>Node</h5>
                       <div className="progress">
                         <div
@@ -210,7 +211,7 @@ function About() {
                         ></div>
                         <div className="skill-percent">40%</div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -387,4 +388,4 @@ function About() {
   );
 }
 
-export default About;
+export default WithSidebar(About);

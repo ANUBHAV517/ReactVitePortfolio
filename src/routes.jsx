@@ -8,6 +8,7 @@ import Frontend from './pages/Frontend';
 import Backend from './pages/Backend';
 import Projects from './pages/Projects';
 import { useRouteError } from 'react-router-dom';
+import Games from './pages/Games';
 // Custom error component
 function RouteError() {
   const error = useRouteError();
@@ -30,6 +31,8 @@ const router = createBrowserRouter(
         { path: 'home', element: <Home /> },
         { path: 'about', element: <About /> },
         { path: 'projects', element: <Projects /> },
+        { path: 'miniProjects', element: <Games /> },
+
         {
           path: 'services',
           element: <Services />,

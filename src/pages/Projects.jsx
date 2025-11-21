@@ -2,10 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import useIsMobile from '../hook/useIsMobile';
 import { Link } from 'react-router-dom';
+import WithSidebar from '../component/WithSidebar';
 
-function Projects() {
-  const sidebarOpen = useSelector((state) => state.sidebar.sidebarOpen);
-  const isMobile = useIsMobile();
+function Projects({ sidebarOpen, isMobile }) {
+  // const sidebarOpen = useSelector((state) => state.sidebar.sidebarOpen);
+  // const isMobile = useIsMobile();
   return (
     <section
       className={`portfolio section ${
@@ -149,4 +150,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default WithSidebar(Projects);

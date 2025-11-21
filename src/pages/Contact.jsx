@@ -2,7 +2,8 @@ import { faMessage, faMobile } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-function Contact() {
+import WithSidebar from '../component/WithSidebar';
+function Contact({ sidebarOpen, isMobile }) {
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -26,7 +27,12 @@ function Contact() {
       );
   };
   return (
-    <section className="contact section" id="contact">
+    <section
+      className={`contact section ${
+        !isMobile ? (sidebarOpen ? 'open' : '') : ''
+      }`}
+      id="contact"
+    >
       <div className="container">
         <div className="row">
           <div className="section-title padd-15">
@@ -140,4 +146,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default WithSidebar(Contact);

@@ -10,8 +10,10 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateSideBar } from '../slice/SidebarSlice';
 import useIsMobile from '../hook/useIsMobile';
+import { faGamepad } from '@fortawesome/free-solid-svg-icons/faGamepad';
+import { updateSideBar } from '../redux/slice/SidebarSlice';
+import { faRProject } from '@fortawesome/free-brands-svg-icons';
 function Sidebar() {
   const dispatch = useDispatch();
   const sidebarOpen = useSelector((state) => state.sidebar.sidebarOpen);
@@ -141,6 +143,16 @@ function Sidebar() {
             >
               <FontAwesomeIcon icon={faDiagramProject} />
               Projects
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="menu"
+              to={'/miniProjects'}
+              onClick={() => dispatch(updateSideBar())}
+            >
+              <FontAwesomeIcon icon={faBriefcase} />
+              Mini Projects
             </NavLink>
           </li>
           <li>

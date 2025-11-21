@@ -8,25 +8,27 @@ function TICTACTOE() {
   // console.log(document.getElementsByClassName('cell'));
   return (
     <div className="game">
-      <div className="header">
-        {messageStatus()}
-        <button className="reset" onClick={reset}>
-          Reset
-        </button>
-      </div>
-      <div className="board">
-        {board?.map((d, index) => {
-          return (
-            <button
-              className="cell"
-              key={uuidv4()}
-              onClick={() => handleClick(index)}
-              disabled={d !== null}
-            >
-              {d}
-            </button>
-          );
-        })}
+      <div className="game-wrapper">
+        <div className="header">
+          {messageStatus()}
+          <button className="reset" onClick={reset}>
+            Reset
+          </button>
+        </div>
+        <div className="board">
+          {board?.map((d, index) => {
+            return (
+              <button
+                className="cell"
+                key={uuidv4()}
+                onClick={() => handleClick(index)}
+                disabled={d !== null}
+              >
+                {d}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

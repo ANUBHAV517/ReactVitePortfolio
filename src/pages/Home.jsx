@@ -1,15 +1,35 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import TICTACTOE from '../component/tic-tac-toe';
 import Sidebar from '../component/Sidebar';
 import { useSelector } from 'react-redux';
 import myImage from '../image/myimg.png';
 import useIsMobile from '../hook/useIsMobile';
-function Home() {
-  const sidebarOpen = useSelector((state) => state.sidebar.sidebarOpen);
-  const isMobile = useIsMobile();
+import WithSidebar from '../component/WithSidebar';
+import Typed from 'typed.js';
+function Home({ sidebarOpen, isMobile }) {
+  // const sidebarOpen = useSelector((state) => state.sidebar.sidebarOpen);
+  // const isMobile = useIsMobile();
 
   const base = import.meta.env.VITE_LOCAL_URL || '/';
-  console.log('base', base);
+  console.log(isMobile, 'base', sidebarOpen);
+  const typedRef = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      strings: ['Software Developer', 'React Developer', 'Frontend Developer'],
+      typeSpeed: 50,
+      backSpeed: 25,
+      loop: true,
+    };
+
+    // Initialize Typed.js
+    const typed = new Typed(typedRef.current, options);
+
+    // Destroy Typed instance on unmounting to cleanup
+    return () => {
+      typed.destroy();
+    };
+  }, []);
   return (
     <>
       {/* <Sidebar /> */}
@@ -27,12 +47,18 @@ function Home() {
                 Hi, my name is <span className="name">Anuhav Srivastava</span>
               </h3>
               <h3 className="my-profession">
-                I' m a <span className="typing">Software Developer</span>
+                I' m a <span className="typing" ref={typedRef}></span>
               </h3>
               <p>
-                I'm a Software Developer with extensive experience for over 10
-                years.My expertise is to create websites and develope a React
-                Integration app and many more....
+                I have 3 years and 11 months of experience in frontend web
+                development with strong expertise in HTML5, CSS3, Bootstrap,
+                React.js, and Next.js. I specialize in building responsive,
+                user-friendly, and performance-optimized web applications. Over
+                the years, I have worked on multiple projects involving modern
+                UI design and clean, maintainable code. I’m passionate about
+                learning new technologies and currently looking for
+                opportunities to further enhance my skills and contribute to
+                innovative web solutions.
               </p>
               <a
                 className="btn"
@@ -52,4 +78,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default WithSidebar(Home);

@@ -6,10 +6,11 @@ import useIsMobile from '../hook/useIsMobile';
 import { faCode, faRocket, faTools } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
+import WithSidebar from '../component/WithSidebar';
 
-function Services() {
-  const sidebarOpen = useSelector((state) => state.sidebar.sidebarOpen);
-  const isMobile = useIsMobile();
+function Services({ sidebarOpen, isMobile }) {
+  // const sidebarOpen = useSelector((state) => state.sidebar.sidebarOpen);
+  // const isMobile = useIsMobile();
   return (
     <>
       <section
@@ -99,4 +100,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default WithSidebar(Services);
