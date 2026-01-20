@@ -43,13 +43,13 @@ const router = createBrowserRouter(
           ],
         },
         { path: 'contact', element: <Contact /> },
-        { path: 'list', element: <List /> },
+        // { path: 'list', element: <List /> },
       ],
     },
   ],
   {
     basename: base, // <-- set your base path here
-  }
+  },
 );
 
 export default router;

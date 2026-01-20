@@ -20,8 +20,8 @@ function List() {
   console.log('list', firstText);
   return (
     <>
-      {/* <VirtualList items={list} /> */}
-      <div className="layout-row align-items-centre justify-content-center mt-50">
+      <VirtualList items={list} />
+      {/* <div className="layout-row align-items-centre justify-content-center mt-50">
         <section className="layout-column">
           <div data-testid="first-text">
             <TextField labelText={'First Text'} onChange={handleFirstChange} />
@@ -37,7 +37,7 @@ function List() {
             {`${firstText} ${secondText}`}
           </label>
         </section>
-      </div>
+      </div> */}
     </>
   );
 }
