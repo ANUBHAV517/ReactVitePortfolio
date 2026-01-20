@@ -9,6 +9,7 @@ import Backend from './pages/Backend';
 import Projects from './pages/Projects';
 import { useRouteError } from 'react-router-dom';
 import Games from './pages/Games';
+import List from './pages/List';
 // Custom error component
 function RouteError() {
   const error = useRouteError();
@@ -42,6 +43,7 @@ const router = createBrowserRouter(
           ],
         },
         { path: 'contact', element: <Contact /> },
+        { path: 'list', element: <List /> },
       ],
     },
   ],

@@ -158,6 +158,16 @@ function Sidebar() {
           <li>
             <NavLink
               className="menu"
+              to={'/list'}
+              onClick={() => dispatch(updateSideBar())}
+            >
+              <FontAwesomeIcon icon={faComments} />
+              List
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="menu"
               to={'/contact'}
               onClick={() => dispatch(updateSideBar())}
             >

@@ -74,6 +74,18 @@ function Home({ sidebarOpen, isMobile }) {
           </div>
         </div>
       </section>
+      {/* <div style={{ border: '1px solid red', padding: '10px' }}>
+        <div style={{ display: 'contents' }}>
+          <p style={{ border: '1px solid blue' }}>
+            This paragraph is shown as if its parent div disappeared.
+          </p>
+        </div>
+      </div>
+      <h2 style={{ display: 'run-in' }}>Section title</h2>
+      <p>
+        This paragraph follows the run-in heading and may cause the heading to
+        display inline with it.
+      </p> */}
     </>
   );
 }

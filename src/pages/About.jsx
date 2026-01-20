@@ -143,6 +143,26 @@ function About({ sidebarOpen, isMobile }) {
                       </div>
                     </div>
                     <div className="skill-item padd-15">
+                      <h5>Webrtc</h5>
+                      <div className="progress">
+                        <div
+                          className="progress-in"
+                          style={{ width: '55%' }}
+                        ></div>
+                        <div className="skill-percent">55%</div>
+                      </div>
+                    </div>
+                    <div className="skill-item padd-15">
+                      <h5>Socket.io</h5>
+                      <div className="progress">
+                        <div
+                          className="progress-in"
+                          style={{ width: '60%' }}
+                        ></div>
+                        <div className="skill-percent">60%</div>
+                      </div>
+                    </div>
+                    <div className="skill-item padd-15">
                       <h5>JavaScript</h5>
                       <div className="progress">
                         <div
