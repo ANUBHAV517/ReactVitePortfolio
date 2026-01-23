@@ -6,6 +6,7 @@ import myImage from '../image/myimg.png';
 import useIsMobile from '../hook/useIsMobile';
 import WithSidebar from '../component/WithSidebar';
 import Typed from 'typed.js';
+import ScrollStack from '../component/ScrollStack';
 function Home({ sidebarOpen, isMobile }) {
   // const sidebarOpen = useSelector((state) => state.sidebar.sidebarOpen);
   // const isMobile = useIsMobile();
@@ -49,7 +50,7 @@ function Home({ sidebarOpen, isMobile }) {
               <h3 className="my-profession">
                 I' m a <span className="typing" ref={typedRef}></span>
               </h3>
-              <p>
+              <p style={{ padding: '10px' }}>
                 I have 3 years and 11 months of experience in frontend web
                 development with strong expertise in HTML5, CSS3, Bootstrap,
                 React.js, and Next.js. I specialize in building responsive,
@@ -60,6 +61,7 @@ function Home({ sidebarOpen, isMobile }) {
                 opportunities to further enhance my skills and contribute to
                 innovative web solutions.
               </p>
+              <ScrollStack />
               <a
                 className="btn"
                 href={`${base}/assets/AnubhavResume.pdf`}
@@ -68,8 +70,15 @@ function Home({ sidebarOpen, isMobile }) {
                 Download Resume
               </a>
             </div>
-            <div className="home-img padd-15">
-              <img src={myImage} alt="" />
+            <div className="home-img ">
+              <div className=" home-image padd-15">
+                <img
+                  src={myImage}
+                  alt=""
+                  className="home-image"
+                  // style={{ visibility: 'hidden' }}
+                />
+              </div>
             </div>
           </div>
         </div>

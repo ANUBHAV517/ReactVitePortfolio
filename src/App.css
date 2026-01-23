@@ -356,7 +356,7 @@ h3.my-profession {
 }
 
 .home-info p {
-  margin-bottom: 70px;
+  margin-bottom: 10px;
   font-size: 20px;
   color: var(--text-black-700);
 }
@@ -368,32 +368,103 @@ h3.my-profession {
   position: relative;
 }
 
-.home-img::after {
+.home-image {
+  position: relative;
+  animation: fadeInScale 0.8s ease-out;
+}
+
+.home-image::after {
   content: '';
   position: absolute;
   height: 80px;
   width: 80px;
   border-bottom: 10px solid var(--skin-color);
   border-right: 10px solid var(--skin-color);
-  right: 20px;
-  bottom: -40px;
+  right: 15%;
+  bottom: -10px;
+  animation: slideInRight 0.6s ease-out 0.5s both;
 }
 
-.home-img::before {
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.home-image::before {
   content: '';
   position: absolute;
   height: 80px;
   width: 80px;
   border-top: 10px solid var(--skin-color);
   border-left: 10px solid var(--skin-color);
-  left: 20px;
-  top: -40px;
+  left: 17%;
+  top: 0px;
+  animation: slideInLeft 0.6s ease-out 0.3s both;
 }
 
-.home .home-img img {
+.home .home-image img {
   height: 375px;
   margin: auto;
-  border-radius: 50px;
+  transition: transform 0.3s ease;
+  /* border-radius: 50px; */
+  /* border: 2px solid black; */
+}
+
+
+.home-image:hover img {
+  transform: scale(1.02);
+}
+
+.home-image:hover::before {
+  animation: pulse 0.6s ease-in-out;
+}
+
+.home-image:hover::after {
+  animation: pulse 0.6s ease-in-out 0.1s;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 /* About */
